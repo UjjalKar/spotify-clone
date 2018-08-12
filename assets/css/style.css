@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+* {
+   /* font-family: 'Nunito', sans-serif;*/
+    font-family: 'Josefin Sans', sans-serif;
+    color: #f1f1f1;
+    letter-spacing: 1px;
+}
+
+body {
+    /*background-color: #37474F;*/
+    background-image: linear-gradient(to right,#263238,#455a64);
+    font-size: 14px;
+    min-width: 720px;
+}
+
+#nowPlayingBarContainer {
+    width: 100%;
+    background-color: #455A64;
+    bottom: 0;
+    position: fixed;
+    min-width: 620px;
+    box-shadow: 0px -2px 4px -1px rgba(0, 0, 0, 0.2),0px -4px 5px 0px rgba(0, 0, 0, 0.14),0px -1px 13px 0px rgba(0, 0, 0, 0.12);
+}
+
+#nowPlayingBar {
+    display: flex;
+    height: 90px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+#nowPlayingLeft,
+#nowPlayingRight {
+    width: 30%;
+    min-width: 180px;
+}
+
+#nowPlayingCenter {
+    width: 40%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nowPlayingBar .content {
+    width: 100%;
+    height: 57px;
+}
+
+.playerControls .buttons {
+    margin: 0 auto;
+    display: table;
+}
+
+button:focus {
+    outline: none;
+}
+
+.controlButton {
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
+}
+
+.controlButton:hover {
+    cursor: pointer;
+}
+
+.controlButton img {
+    width: 20px;
+    height: 20px;
+}
+
+.controlButton.play img,
+.controlButton.pause img {
+    width: 32px;
+    height: 32px;
+}
+
+.progressTime {
+    color: #a0a0a0;
+    font-size: 11px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.playbackBar {
+    display: flex;
+}
+
+.progressBar {
+    width: 100%;
+    height: 12px;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.progressBarBg {
+    background-color: #404040;
+    height: 4px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.progress {
+    background-color: #a0a0a0;
+    height: 4px;
+    width: 0;
+    border-radius: 50px;
+    transition: all .2s;
+}
+
+.playbackBar .progressBar {
+    margin-top: 3px;
+}
+
+#nowPlayingLeft .albumArtwork {
+    height: 100%;
+    max-width: 57px;
+    margin-right: 15px;
+    float: left;
+    background-size: cover;
+}
+
+#nowPlayingLeft .trackInfo {
+    display: table;
+}
+
+#nowPlayingLeft .trackInfo .trackName {
+    margin: 6px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+#nowPlayingLeft .trackInfo .artistName span {
+    font-size: 12px;
+    color: #a0a0a0;
+}
+
+#nowPlayingRight {
+    position: relative;
+    margin-top: 16px;
+}
+
+.volumeBar {
+    width: 180px;
+    position: absolute;
+    right: 0;
+}
+
+.volumeBar .progressBar {
+    width: 125px;
+}
+
+#topContainer {
+    min-height: 100%;
+    width: 100%;
+}
+
+#navBarContainer {
+    background-color: #263238;
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),0px 4px 5px 0px rgba(0, 0, 0, 0.14),0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.navBar {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
+
+.navBar .group {
+    border-top: 1px solid #a0a0a0;
+    padding: 10px 0;
+}
+
+.navItem {
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.navItemLink {
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+.navItemLink:hover {
+    color: #B0BEC5;
+}
+
+.navItemLink .icon {
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 25px;
+}
+
+#mainViewContainer {
+    margin-left: 220px;
+    padding-bottom: 90px;
+    width: calc(100% - 220px);
+}
+
+#mainContent {
+    padding: 0 20px;
+}
+
+.pageHeadingBig {
+    padding: 20px;
+    text-align: center;
+}
+
+.gridViewItem {
+    display: inline-block;
+    margin-right: 20px;
+    width: 29%;
+    max-width: 200px;
+    min-width: 150px;
+    margin-bottom: 20px;
+    transition: all .3s ease-in-out;
+    position: relative;
+}
+
+
+.gridViewItem img {
+    width: 100%;
+}
+
+.gridViewInfo {
+    font-weight: 300;
+    text-align: center;
+    padding: 5px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+.gridViewInfoHover {
+    position: absolute;
+    top: 0;
+    font-size: 25px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background: rgba(40,42,45,.7);
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.gridViewItem a:hover .gridViewInfoHover {
+    visibility: visible;
+    top: 0;
+    opacity: 1;
+    height: 200px;
+}
+
+.gridViewItem a:hover .gridViewInfo {
+    visibility: hidden;
+}
+
+.gridViewInfoHover h4 {
+    margin-top: 40%;
+}
+
+.gridViewItem a {
+    text-decoration: none;
+}
+
+.entityInfo {
+    padding: 40px 0 10px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.entityInfo .leftSection {
+    width: 30%;
+    float: left;
+    max-width: 250px;
+}
+
+.entityInfo .leftSection img {
+    width: 100%;
+}
+
+.entityInfo .rightSection {
+    width: 70%;
+    float: left;
+    padding: 5px 10px 5px 40px;
+    box-sizing: border-box;
+}
+
+.entityInfo .rightSection h2 {
+    margin-top: 0;
+}
+
+.entityInfo .rightSection p {
+     color: #939393;
+    font-weight: 200;
+}
+
+.tracklist {
+    padding: 0;
+}
+
+.tracklistRow {
+    height: 40px;
+    padding: 15px 10px;
+    list-style: none;
+    transition: all .3s ease-in-out;
+    transform: scale3d(0.95, 0.95, 0.95);
+}
+
+.tracklistRow:hover {
+    background-color: #455A6466;
+    transform: scale3d(1, 1, 1);
+}
+
+.tracklistRow span {
+    color: #939393;
+    font-weight: 200;
+}
+
+.tracklistRow .trackCount {
+    width: 8%;
+    float: left;
+}
+
+.tracklistRow .trackCount img {
+    width: 20px;
+    visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+
+}
+
+.tracklistRow:hover .trackCount img {
+    visibility: visible;
+    transition: all .3s;
+}
+
+.tracklistRow .trackCount span {
+    visibility: visible;
+}
+
+.tracklistRow:hover .trackCount span {
+    visibility: hidden;
+}
+
+.tracklistRow .trackInfo {
+    width: 75%;
+    float: left;
+}
+
+.tracklistRow .trackInfo span {
+    display: block;
+}
+
+.tracklistRow .trackInfo .trackName {
+    color: #f1f1f1;
+    margin-bottom: 7px;
+}
+
+.tracklistRow .trackOptions {
+    width: 5%;
+    float: left;
+    text-align: right;
+}
+
+.tracklistRow .trackOptions img {
+    width: 20px;
+    visibility: hidden;
+}
+
+.tracklistRow:hover .trackOptions img {
+    visibility: visible;
+}
+
+.tracklistRow .trackDuration {
+    width: 12%;
+    float: left;
+    text-align: right;
+}
+
+/* final after change a link to span */
+
+.navBar span {
+    outline: none;
+}
+
+.gridViewItem span:focus {
+    outline: none;
+}
+
+.gridViewItem:hover {
+    cursor: pointer;
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.artistInfo {
+    text-align: center;
+}
+
+.button {
+    color: #f1f1f1;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: transparent;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border: 2px solid #f1f1f1;
+    text-transform: uppercase;
+    border-radius: 500px;
+    padding: 11px;
+    min-width: 150px;
+    transition: all .3s;
+}
+
+.button.green {
+    background-color: #2ebd59;
+    border: #2ebd59;
+
+}
+
+.button.green:hover {
+
+    transform: scale(1.05,1.05);
+}
+
+.borderbottom {
+    border-bottom: 1px solid #939393;
+    margin-bottom: 20px;
+}
+
+.tracklistContainer h1,
+.gridViewContainer h1 {
+    text-align: center;
+}
+
+[role="link"] {
+    cursor: pointer;
+}
+
+.searchContainer {
+    background-color: #3e5059;
+    padding: 20px 28px;
+}
+
+.searchContainer h4 {
+    margin: 0;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+.searchContainer .searchInput {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: #f1f1f1;
+    font-weight: 700;
+    font-size: 60px;
+		padding: 8px 0;
+    letter-spacing: 2px;
+		box-sizing: border-box;
+		font-family: 'Poppins', sans-serif;
+}
+
+.searchContainer .searchInput:focus {
+    outline: none;
+}

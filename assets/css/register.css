@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+html, 
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#background {
+	background-color: #000;
+	background-image: url(../images/bg.jpg);
+	background-position: center;
+	background-size: cover;
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+#loginContainer * {
+	color: #f1f1f1;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 300;
+	line-height: 1em;
+	box-shadow: border-box;
+}
+
+#loginContainer {
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+	max-width: 1024px;
+}
+
+#inputContainer {
+	width: 400px;
+	padding: 45px;
+	float: left;
+	border-right: 1px solid #999;
+}
+
+#inputContainer h2 {
+	text-align: center;
+}
+
+#inputContainer input[type="text"],
+#inputContainer input[type="email"],
+#inputContainer input[type="password"] {
+	display: block;
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid #f1f1f1;
+	height: 27px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#inputContainer input:focus {
+	outline: 0;
+}
+
+#inputContainer input:focus:invalid {
+	outline: 0;
+	border: 0;
+	border-bottom: 1px solid red;
+}
+
+#inputContainer input:focus:valid {
+	border-bottom: 1px solid #21ce21;
+
+}
+#inputContainer input:-webkit-autofill {
+    background-color: transparent;
+}
+
+#inputContainer input:focus,
+#inputContainer input:-webkit-autofill:focus {
+    background-color: transparent;
+}
+
+
+::-webkit-input-placeholder {
+	color: #f1f1f1;
+	background-color: transparent;
+}
+
+:-moz-placeholder {
+	color: #f1f1f1;
+	opacity: 1;
+}
+
+::-moz-placeholder {
+	color: #f1f1f1;
+	opacity: 1;
+}
+:-ms-input-placeholder {
+	color: #f1f1f1;
+}
+
+::-ms-input-placeholder {
+	color: #f1f1f1;
+}
+
+#inputContainer #loginForm {
+    height: 303px;
+}
+
+#inputContainer label {
+	color: #a0a0a0;
+	font-size: 13px;
+	margin-top: 15px;
+	display: block;
+}
+
+#inputContainer button {
+	background-color: transparent;
+	border: 2px solid #f1f1f1;
+	border-radius: 200px;
+	color: #fff;
+	display: block;
+	font-size: 14px;
+	letter-spacing: 1px;
+	margin: 20px auto;
+	height: 41px;
+	width: 100%;
+	transition: all .3s;
+}
+
+#inputContainer button:focus {
+	outline: none;
+}
+
+#inputContainer button:hover {
+	cursor: pointer;
+	background-color: #21ce21;
+	border-color: #21ce21;
+	transition: all .3s;
+}
+
+.hasAccountText {
+	text-align: center;
+	cursor: pointer;
+}
+
+.hasAccountText span {
+	font-weight: bold;
+	font-size: 13px;
+	letter-spacing: 1px;
+}
+
+#registerForm,
+#loginForm {
+	display: none;
+}
+
+#loginText {
+   	padding: 45px;
+    display: table-cell;
+}
+
+#loginText h1 {
+    color: #21ce21;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#loginText h2 {
+    margin: 35px 0;	
+}
+
+#loginText ul {
+	padding: 0;
+}
+
+#loginText li {
+    font-size: 20px;
+    list-style-type: none;
+    padding: 4px 33px;
+    background: url(../images/icons/check.svg) no-repeat 0 0;
+}
+
+#inputContainer .errorMessage {
+    color: #21ce21;
+    display: block;
+    font-size: 16px;
+}
